@@ -1,5 +1,6 @@
 const User = require('./User');
 const Product = require('./product');
+const Messages = require('./messeges')
 
 User.hasMany(Product, {
   foreignKey: 'user_id',
@@ -10,4 +11,8 @@ Product.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Product };
+// Messages.belongsTo(User, {
+
+// })
+
+module.exports = { User, Product, Messages };

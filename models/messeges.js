@@ -19,14 +19,6 @@ Messages.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-        type:DataTypes.TEXT,
-        allowNull: true,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

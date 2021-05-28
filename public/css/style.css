@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #FE6100;
+    --secondary-color: #009DFF;
+    --white: #fff;
+}
+
+html {
+    
+}
+
+body {
+    min-height: 100%;
+    margin: 0px;
+}
+
+
+header {
+    background-color: var(--primary-color) ;
+    color: var(--white);
+    min-width: 100%;
+    min-height:50px;
+    margin: 0px;
+    padding: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#sign-in-panel {
+    display: flex;
+    margin: 5px;
+    height: 100%;
+    justify-content: space-around;
+    
+}
+
+#sign-in {
+    display: inline-block;
+    padding: 10px;
+    color: var(--white);
+    font-weight: 600;
+    align-self: center;
+}
+
+#register {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--white);
+    align-self: center;
+}
+
+.flex-item {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+main {
+    background-color: #f9bb95;
+    margin: 0px;
+    padding: 15px;
+}
+
+#offered {
+    background-color: green;
+    color: var(--white);
+    width:50%;
+    text-align: center;
+}
+
+#requested {
+    background-color: red;
+    color: var(--white);
+    width:50%;
+    text-align: center;
+}
+.card {
+    background-color: var(--white);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+}
+
+.hidden {
+    visibility: hidden;
+}

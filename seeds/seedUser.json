@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Tomos Muir", 
+        "email": "tmuir@email.com",
+        "password": "123"
+    },
+    {
+        "name": "Belinda Singh", 
+        "email": "bsingh@email.com",
+        "password": "password"
+    },
+    {
+        "name": "Imaan Franco", 
+        "email": "maan@email.com",
+        "password": "guest"
+    },
+    {
+        "name": "Ammarah Hibbert", 
+        "email": "aibbert@email.com",
+        "password": "0000"
+    },
+    {
+        "name": "Daisy-Mae Mccray", 
+        "email": "daisymae@email.com",
+        "password": "123"
+    },
+    {
+        "name": "Alesha Koch", 
+        "email": "kocha@email.com",
+        "password": "123"
+    }
+   
+]

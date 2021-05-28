@@ -1,0 +1,44 @@
+[
+    {
+        "product": "Carrots",
+        "type": "Vegetables",
+        "quantity": "12",
+        "description": "garden fresh heirloom carrots.", 
+        "user_id": 1   
+    },
+    {
+        "product": "Strawberries",
+        "type": "Fruit",
+        "quantity": "2 lbs",
+        "description": "garden fresh heirloom carrots.", 
+        "user_id": 1   
+    },
+    {
+        "product": "Various Jams",
+        "type": "Preserves",
+        "quantity": "57",
+        "description": "Homemade blackberry, raspberry, and apricot jams", 
+        "user_id": 1   
+    },
+    {
+        "product": "Potatoes",
+        "type": "Vegetables",
+        "quantity": "36",
+        "description": "Russet potatoes", 
+        "user_id": 1   
+    },
+    {
+        "product": "Sweet Corn",
+        "type": "Vegetables",
+        "quantity": "12",
+        "description": "garden fresh sweet corn.", 
+        "user_id": 1   
+    },
+    {
+        "product": "Hummus",
+        "type": "Dishes",
+        "quantity": "12",
+        "description": "garden fresh heirloom carrots.", 
+        "user_id": 1   
+    }
+]

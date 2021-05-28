@@ -4,10 +4,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Product extends Model {}
+class Messages extends Model {}
 
 // set up fields and rules for Product model
-Product.init(
+Messages.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,20 +15,13 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
+   messages: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     type: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true
-      }
     },
     description: {
         type:DataTypes.TEXT,
@@ -40,15 +33,22 @@ Product.init(
         model: 'user',
         id: 'id'
       }
-    }
+    },
+    product_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'product',
+          id: 'id'
+        }
+      }
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'messages',
   }
 );
 
-module.exports = Product;
+module.exports = Messages;

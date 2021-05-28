@@ -9,7 +9,7 @@
     {
         "product": "Strawberries",
         "type": "Fruit",
-        "quantity": "2 lbs",
+        "quantity": "2",
         "description": "garden fresh heirloom carrots.", 
         "user_id": 4   
     },

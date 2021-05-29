@@ -3,11 +3,13 @@ const loginFormHandler = async (event) => {
   
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
+    const emailArr = email.split('@');
+    const name = emailArr[0];
   
     if (email && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   

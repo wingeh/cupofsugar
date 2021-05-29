@@ -16,17 +16,22 @@
 <!-- Header Section -->
 <header>
     <div id="logo" class="flex-item">
-        <h1><i class="bi bi-basket-fill"></i> CUP-OF-SUGAR</h1>
+        <a href="index.html" title="Newsfeed">
+            <h1><i class="bi bi-basket-fill"></i> CUP O' SUGAR</h1>
+        </a>
     </div>
 
 <!-- Profile / Log Out displays when a session is active -->    
-<div id="profile-button" class="flex-item">
-    <ul>[PROFILE BUTTON]
-        <li>MY PANTRY</li>
-        <li>CREATE A POST</li>
-        <li>SIGN OUT</li>
-    </ul>
-</div>
+
+    <div class="dropdown flex-item" id="profile-button">
+        <button class="dropbtn">[PROFILE BUTTON]</button>
+        <div class="dropdown-content">
+          <a href="pantry.html">MY PANTRY</a>
+          <a href="create.html">CREATE A POST</a>
+          <a href="#">SIGN OUT</a>
+        </div>
+    </div>
+
 </header>
 
 <!-- Main Section -->
@@ -44,6 +49,17 @@
                         <label for="quantity">How much/how many do you have to offer?</label>
                         <input type="text" class="form-control" placeholder="Quantity" id="quantity">
                     </div>
+                </div>
+                    
+                <div class="form-row">
+                    <label for="category">What category does this item belong to?</label>
+                    <select class="custom-select mr-sm-2" id="category">
+                        <option value="fruits" selected>Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="preserves">Preserves & Non-Perishables</option>
+                        <option value="seeds">Nuts & Seeds</option>
+                        <option value="other">Other</option>
+                      </select>
                 </div>
                 
                 <div class="form-row">

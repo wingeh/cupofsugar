@@ -60,6 +60,18 @@
         <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
       </div>
 </form>
+
+        <script type="test/x-handlebars-template">
+            <div class="card">
+                {{#each Product}}
+                <h4>CATEGORY</h4> 
+                <h3>QUANTITY of {{product}}</h3>
+                <p>Posted By: USERNAME - DATE</p>
+                <p>DESCRIPTION</p>
+                
+                {{/each}}
+            </div>
+        </script>
         <div class="card">
             <h4>[CATEGORY]</h4> 
             <h3>[QUANTITY] of [PRODUCT]</h3>

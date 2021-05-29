@@ -17,6 +17,10 @@ ourRequest.onerror = function() {
 ourRequest.send();
 
 function createHTML(postingData) {
-    console.log("testing from the function");
-    console.log(postingData);
+    const rawTemplate = document.getElementById("postTemplate").innerHTML;
+    const compiledTemplate = Handlebars.compile(rawTemplate);
+    const ourGeneratedHTML = compiledTemplate(postingData);
+
+    const postContainer = document.getElementById("post-container");
+    postContainer.innerHTML = ourGeneratedHTML;
 }

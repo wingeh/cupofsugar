@@ -32,6 +32,7 @@
         <button class="dropbtn">[PROFILE BUTTON]</button>
         <div class="dropdown-content">
             <a href="pantry.html">MY PANTRY</a>
+            <a href="messages.html">VIEW MESSAGES</a>
             <a href="create.html">CREATE A POST</a>
             <a href="#">SIGN OUT</a>
         </div>
@@ -60,24 +61,21 @@
         <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
       </div>
 </form>
-
-        <script type="test/x-handlebars-template">
+        <div id="post-container"class="card">
+             
+        </div>
+        <script id="postTemplate" type="test/x-handlebars-template">
             <div class="card">
                 {{#each Product}}
-                <h4>CATEGORY</h4> 
-                <h3>QUANTITY of {{product}}</h3>
-                <p>Posted By: USERNAME - DATE</p>
-                <p>DESCRIPTION</p>
+                <h4>{{type}}</h4> 
+                <h3>{{quantity}} of {{product}}</h3>
+                <p>Posted By: {{user_id}} - {{timestamps}}</p>
+                <p>{{description}}</p>
                 
                 {{/each}}
             </div>
         </script>
-        <div class="card">
-            <h4>[CATEGORY]</h4> 
-            <h3>[QUANTITY] of [PRODUCT]</h3>
-            <p>Posted By: [USERNAME] - [DATE]</p>
-            <p>[DESCRIPTION]</p>
-        </div>
+        
 
         <div class="card">
             <h4>[CATEGORY]</h4>

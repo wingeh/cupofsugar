@@ -1,0 +1,1 @@
+document.getElementById('pantry').addEventListener('click', goToPantry);

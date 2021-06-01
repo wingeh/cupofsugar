@@ -26,6 +26,18 @@ header {
     justify-content: space-between;
 }
 
+header a {
+    text-decoration: none;
+    border: 0px;
+    color: var(--white);
+}
+
+header a:hover {
+    text-decoration: none;
+    border: 0px;
+    color: #ccc;
+}
+
 #sign-in-panel {
     display: flex;
     margin: 5px;

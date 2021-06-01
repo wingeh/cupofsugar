@@ -33,4 +33,4 @@ const registerLogin =  async (email, password)  => {
     }
 };
 
-document.getElementById('#register-form').addEventListener('submit', registerFormHandler);
+document.getElementById('#register-form').addEventListener('click', registerFormHandler);

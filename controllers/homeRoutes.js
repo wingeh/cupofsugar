@@ -3,10 +3,13 @@ const { User, Product, Messages } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const productData = await Product.findAll();
-        const products = productData.get({ plain: true });
-        res.sendFile(path.join(__dirname, '../views/index.html'));
-        // res.render('home', products);
+        const productData = await Product.findAll({
+            order:[['updatedAt',  'DESC']]
+        });
+
+        const products = productData.map((product) => product.get({ plain: true }));
+        
+        res.render('home', products);
     } catch (err) {
         res.status(500).json(err);
     }

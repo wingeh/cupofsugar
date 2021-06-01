@@ -1,37 +1,44 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User } = require('../../models/');
+
 
 // For when the user interacts with the user table in the database
+router.post('/', async (req, res) => {
+  try {
+    console.log(req.body)
+    const registerData = await User.create(req.body);
+    
+    res.status(200).json(registerData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: {email: req.body.email } });
-        console.log(userData)
-        if (!userData) {
-            res
-              .status(400)
-              .json({ message: 'Incorrect email or password, please try again' });
-            return;
-          }
+      const userData = await User.findOne({ where: {email: req.body.email } });
+      console.log(userData)
+      if (!userData) {
+          res.status(400).json({ message: 'Incorrect email or password, please try again' });
+          return;
+      };
       
-          const validPassword = await userData.checkPassword(req.body.password);
+      const validPassword = userData.checkPassword(req.body.password);
       
-          if (!validPassword) {
-            res
-              .status(400)
-              .json({ message: 'Incorrect email or password, please try again' });
-            return;
-          }
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect email or password, please try again' });
+          return;
+      };
       
-          req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
             
-            res.json({ user: userData, message: 'You are now logged in!' });
-          });
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
 
     } catch (err) {
-        res.status(400).json({ message: 'dfdfdf'});
+        res.status(400).json(err);
     }
 });
 

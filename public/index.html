@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
+<meta name="Description" content="Give away your excess food! Instead of letting produce spoil in your kitchen, pay it forward and help out another person in your community."/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -33,7 +33,7 @@
             <a href="pantry.html"><i class="bi bi-basket"></i> MY PANTRY</a>
             <a href="messages.html"><i class="bi bi-mailbox"></i> VIEW MESSAGES</a>
             <a href="create.html"><i class="bi bi-cart-plus"></i> CREATE A POST</a>
-            <a href="#" id="sign-out"><i class="bi bi-x-circle"></i> SIGN OUT</a>
+            <a href="#" id="logout"><i class="bi bi-x-circle"></i> SIGN OUT</a>
         </div>
     </div>
 
@@ -85,7 +85,7 @@
               <div class="control-group">
                 <label class="control-label" for="signin"></label>
                 <div class="controls">
-                  <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
+                  <button id="login-form" name="signin" class="btn btn-primary btn-block">Log In</button>
                 </div>
               </div>
               </fieldset>
@@ -109,14 +109,14 @@
               
               <!-- Password input-->
               <div class="group">
-  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+  <input required="" class="input" type="text" id="email-register"><span class="highlight"></span><span class="bar"></span>
       <label class="label" for="date">Email</label></div>
               
               <!-- Text input-->
               <div class="group">
-  <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+  <input required="" class="input" type="password" id="password-register"><span class="highlight"></span><span class="bar"></span>
       <label class="label" for="date">Password</label></div>
-                <em>1-8 Characters</em>
+                <em>Min. 8 Characters</em>
               
                 <!--<div class="group2">
   <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
@@ -128,7 +128,7 @@
               <div class="control-group">
                 <label class="control-label" for="confirmsignup"></label>
                 <div class="controls">
-                  <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
+                  <button id="register-form" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
                 </div>
               </div>
               </fieldset>
@@ -179,11 +179,12 @@
     </div>
   </div>
   
+  <!-- Buy Sell Sorting -->
     <div id="categories" class="flex">
         <div id="offered" class="category"><h3>OFFERED</h3></div>
         <div id="requested" class="category"><h3>REQUESTED</h3></div>
     </div>
-        
+  <!--Filter by category -->      
     <form class="form-inline">
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -201,21 +202,15 @@
         <div id="post-container"class="card">
              
         </div>
-        <script id="postTemplate" type="test/x-handlebars-template">
-            {{#each Product}}
-                <div class="card">
-                    <h4>{{type}}</h4> 
-                    <h3>{{quantity}} of {{product}}</h3>
-                    <p>Posted By: {{user_id}} - {{timestamps}}</p>
-                    <p>{{description}}</p>      
-                </div>
-            {{/each}}
-        </script>   
+
+        <!--Import newsfeed-->
+        <script src="../views/homepage.handlebars" type="test/x-handlebars-template"></script> 
+
 </main>
 
 <!-- Footer Section -->
 <footer>
-<p>Copyright &copy; 2021 Cup-of-Sugar LLC.</p>
+<p>Copyright &copy; 2021 Cup O' Sugar LLC.</p>
 </footer>
 <!-- Start Scripts-->
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>

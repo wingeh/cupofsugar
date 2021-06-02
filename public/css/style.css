@@ -9,8 +9,9 @@ html {
 }
 
 body {
-    min-height: 100%;
     margin: 0px;
+    padding: 0px;
+    height:85vh;
 }
 
 
@@ -74,7 +75,10 @@ header a:hover {
 main {
     background-color: #f9bb95;
     margin: 0px;
+    display: flex;
+    flex-flow: column;
     padding: 15px;
+    min-height:100%;    
 }
 
 #offered {
@@ -95,6 +99,8 @@ main {
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+    width:80%;
+    align-self: center;
 }
 footer {
     background-color: var(--primary-color);

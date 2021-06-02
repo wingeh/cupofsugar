@@ -1,4 +1,4 @@
-  <h2><i class="bi bi-basket"></i> {{username}}'s Pantry</h2>
+  <h2><i class="bi bi-basket"></i> {{User.name}}'s Pantry</h2>
     
     <a href="index.html" title="Return to Newsfeed"> &#60; Return to Newsfeed</a>
  
@@ -8,6 +8,6 @@
         <h3>{{quantity}} of {{product}}</h3>
         <p>Posted On: {{timestamps}}</p>
         <p>{{description}}</p>
-        <button type="button" class="btn btn-danger"><i class="bi bi-eraser"></i> DELETE</button> 
+        <button type="button" class="btn btn-danger" id="delete-post"><i class="bi bi-eraser"></i> DELETE</button> 
         </div>
 {{/each}}

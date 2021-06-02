@@ -18,4 +18,13 @@ const postProduct = async (event) => {
     }
 };
 
-document.getElementById('#post').addEventListener('submit', postProduct);
+const viewPostTemplate = () => {
+    const response = await fetch('/api/product/create', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+}
+
+
+document.getElementById('create-post').addEventListener('click', viewPostTemplate);
+document.getElementById('post').addEventListener('submit', postProduct);

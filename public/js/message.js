@@ -16,4 +16,12 @@ const sendMessage = (event) => {
     }
 };
 
-document.getElementById('send-message'),addEventListener('submit', sendMessage);
+const viewMessages = () => {
+    const response = await fetch('/api/messages', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+}
+
+document.getElementById('view-message').addEventListener('click', viewMessages);
+document.getElementById('send-message').addEventListener('submit', sendMessage);

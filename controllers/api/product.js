@@ -13,6 +13,34 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/pantry', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            const pantryData = await Product.findAll({ where: {user_id: req.session.user_id}});
+            const pantryItems = pantryData.map((item) => item.get({ plain: true }));
+            console.log(pantryItems)
+            // res.render('pantry', pantryItems); 
+        } else {
+            res.redirect('/');
+            return;
+        }
+    } catch (err) {
+      res.status(400).json(err);
+    }
+})
+
+router.get('/create', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.render('create');
+        }
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
+
+
 router.post('/', async (req, res) => {
     try {
         if (req.session.logged_in) {

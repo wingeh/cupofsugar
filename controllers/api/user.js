@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User } = require('../../models/');
 
 
-// For when the user interacts with the user table in the database
 router.post('/', async (req, res) => {
   try {
     console.log(req.body)

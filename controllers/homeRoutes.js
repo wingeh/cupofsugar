@@ -31,4 +31,33 @@ router.get('/login', (req, res) => {
     }
 });
 
+router.get('/messages', async (req, res) => {
+    try {
+        const messageData = await Messages.findAll({
+            order:[['updatedAt',  'DESC']]
+        });
+
+        const messages = messageData.map((messages) => messages.get({ plain: true }));
+        console.log(messages)
+        res.render('messages', { messages });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/pantry', async (req, res) => {
+    console.log ("pantry called")
+    try {
+        const pantryData = await Product.findAll({
+            where: {user_id: req.session.user_id},
+            order:[['updatedAt',  'DESC']]
+        });
+        console.log ("Pantry Data: " + pantryData)
+        const pantry = pantryData.map((pantry) => pantry.get({ plain: true }));
+        console.log(pantry)
+        res.render('pantry', { pantry });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;

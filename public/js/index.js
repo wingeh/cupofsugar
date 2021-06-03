@@ -1,7 +1,7 @@
 //  var ourRequest = new XMLHttpRequest();
 //  ourRequest.open('GET', 'http://localhost:3001/api/products/')
 
-// ourRequest.onload = function(){
+//ourR equest.onload = function(){
 //   console.log("API Called")
 //      if (ourRequest.status >= 200 && ourRequest.status < 400) {
 //         console.log("Status 200: Server connected");

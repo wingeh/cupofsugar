@@ -1,6 +1,6 @@
 // const logout = async () => {
-//     const response = await fetch('/api/users/logout', {
-//       method: 'POST',
+//     const response = await fetch('/api/products/', {
+//       method: 'GET',
 //       headers: { 'Content-Type': 'application/json' },
 //     });
   
@@ -21,8 +21,8 @@ console.log ("andrew-test.js is being loaded")
 //      if (ourRequest.status >= 200 && ourRequest.status < 400) {
 //         console.log("Status 200: Server connected");
 //         console.log(ourRequest.responseText);
-//          //var data = JSON.parce(ourRequest.responseText);
-//         createHTML (ourRequest.responseText);
+//          var data = JSON.parce(ourRequest.responseText);
+//         createHTML (data);
 //         //console.log(data)
         
 //      } else {

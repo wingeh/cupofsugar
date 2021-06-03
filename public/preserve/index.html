@@ -202,9 +202,22 @@
        
 
         <!--Import newsfeed-->
-        <script id="rawTemplate">
         <div id="post-container"></div>
+        <script id="postTemplate" type="text/x-handlebars-template">
+        
+          <h2>Welcome {{User.name}}</h2>
+
+{{#each product as |product| }}
+   <div class="card">
+       <h4>{{product.type}}</h4> 
+       <h3>{{quantity}} of {{product}}</h3>
+       <p>Posted By: {{User.name}} - {{timestamps}}</p>
+       <p>{{description}}</p>      
+       </div>
+{{/each}}
+          
         </script>
+      </div>
        
 
 </main>

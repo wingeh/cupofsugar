@@ -2,11 +2,14 @@
  ourRequest.open('GET', 'http://localhost:3001/api/products/')
 
 ourRequest.onload = function(){
+  console.log("API Called")
      if (ourRequest.status >= 200 && ourRequest.status < 400) {
-         var data = JSON.parce(ourRequest.responseTest);
-        createHTML (data);
-        console.log(data)
-        console.log("Status 200: Server connected")
+        console.log("Status 200: Server connected");
+        console.log(ourRequest.responseText);
+         //var data = JSON.parce(ourRequest.responseText);
+        createHTML (ourRequest.responseText);
+        //console.log(data)
+        
      } else {
          console.log("We connected to the server, but it returned an error");
      }
@@ -20,9 +23,14 @@ ourRequest.onload = function(){
 
  function createHTML(data) {
      const rawTemplate = document.getElementById("postTemplate").innerHTML;
+     console.log(rawTemplate)
      const compiledTemplate = Handlebars.compile(rawTemplate);
-     const ourGeneratedHTML = compiledTemplate(data);
 
+     console.log(compiledTemplate)
+     const ourGeneratedHTML = compiledTemplate(data);
+     //console.log (data)
+
+    //console.log (ourGeneratedHTML);
      const postContainer = document.getElementById("post-container");
      postContainer.innerHTML = ourGeneratedHTML;
  }

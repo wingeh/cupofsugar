@@ -44,6 +44,21 @@ router.get('/create', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            const productData = await Product.findByPk(req.params.id)
+            const products = productData.get({ plain: true });
+            res.status(200).json(products);
+        } 
+        // else {
+        //     res.render('home');
+        // }
+    } catch (err) {
+        res.status(400).json(err);
+    }
 })
 
 

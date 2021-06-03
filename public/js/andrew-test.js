@@ -1,5 +1,20 @@
-//  var ourRequest = new XMLHttpRequest();
-//  ourRequest.open('GET', 'http://localhost:3001/api/products/')
+// const logout = async () => {
+//     const response = await fetch('/api/users/logout', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+  
+//     if (response.ok) {
+//       document.location.replace('/login');
+//     } else {
+//       alert(response.statusText);
+//     }
+//   };
+
+console.log ("andrew-test.js is being loaded")
+
+// var ourRequest = new XMLHttpRequest();
+// ourRequest.open('GET', 'http://localhost:3001/api/products/')
 
 // ourRequest.onload = function(){
 //   console.log("API Called")
@@ -34,29 +49,3 @@
 //      const postContainer = document.getElementById("post-container");
 //      postContainer.innerHTML = ourGeneratedHTML;
 //  }
-
-// Log In / Register overlay
-$(window, document, undefined).ready(function() {
-
-    $('.input').blur(function() {
-      var $this = $(this);
-      if ($this.val())
-        $this.addClass('used');
-      else
-        $this.removeClass('used');
-    });
-    
-    });
-  
-  
-  $('#tab1').on('click' , function(){
-      $('#tab1').addClass('login-shadow');
-     $('#tab2').removeClass('signup-shadow');
-  });
-  
-  $('#tab2').on('click' , function(){
-      $('#tab2').addClass('signup-shadow');
-     $('#tab1').removeClass('login-shadow');
-  
-  
-  });

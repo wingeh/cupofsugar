@@ -5,8 +5,4 @@ const goToPantry = () => {
     })
 };
 
-
-
-document.getElementById('pantry').addEventListener('click', goToPantry);
-document.getElementById('pantry').addEventListener('click', goToPantry);
 document.getElementById('pantry').addEventListener('click', goToPantry);

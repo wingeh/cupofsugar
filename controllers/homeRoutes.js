@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
         const products = productData.map((product) => product.get({ plain: true }));
         console.log(products)
-        res.render('home', products);
+        res.render('homepage', { products });
     } catch (err) {
         res.status(500).json(err);
     }

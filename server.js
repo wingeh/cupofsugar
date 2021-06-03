@@ -25,6 +25,12 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//post request 
+
+app.post('/api'), (request,response)=> { 
+  console.log(request);
+}
 app.use(session(sess));
 
 app.use(express.json());

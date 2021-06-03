@@ -10,7 +10,8 @@ class Messages extends Model {}
 Messages.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER, 
+
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,

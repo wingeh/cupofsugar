@@ -20,6 +20,5 @@ const loginFormHandler = async (event) => {
     }
   };
   
-  const loginClick = document.getElementById("#login-form");
-  loginClick.addEventListener('click', loginFormHandler);
+  document.getElementById('login-form').addEventListener('click', loginFormHandler);
   

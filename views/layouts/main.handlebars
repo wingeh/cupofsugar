@@ -27,7 +27,7 @@
     {{#if logged_in}}
 
         <!-- Load logout.js -->
-        <script src="js/logout.js"></script>
+       
 
         <!-- Profile / Sign Out displays when a session is active -->
         <div class="dropdown flex-item hidden" id="profile-button">
@@ -62,8 +62,9 @@
 <p>Copyright &copy; 2021 Cup O' Sugar LLC.</p>
 </footer>
 <!-- Start Scripts-->
-
-
+{{#if logged_in}}
+<script src="js/logout.js"></script>
+{{/if}}
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

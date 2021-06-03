@@ -44,7 +44,6 @@ header a:hover {
     margin: 5px;
     height: 100%;
     justify-content: space-around;
-    
 }
 
 #sign-in {
@@ -98,26 +97,45 @@ main {
     text-align: center;
 }
 
-.card-wrapper {
+/* Card Styling */
+.card-body {
   padding: 10px;
-  width:80%;
-  align-self: center;
 }
 .card {
     background-color: var(--white);
-    margin: 0px;
-
-    border-radius: 0px 0px 10px 10px;  
-    padding: 10px;
+    margin: 10px;
+    width: 80%;
+    border-radius: 10px;  
+    padding: 0px;
+    align-self: center;
 }
 
 .card-topper{
-  background-color: orange;
+  
   border-radius: 10px 10px 0px 0px;
-  width:100%;
-  padding: 0px;
+  width: 100%;
+  padding: 5px 10px;
   margin: 0px;
+  color: white;
 }
+
+.Preserves {
+  background-color: orange;
+}
+
+.Fruit {
+  background-color: red;
+}
+
+.Vegetables {
+  background-color: green;
+}
+
+.Dishes {
+  background-color: black;
+}
+/* Footer */
+
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -125,6 +143,8 @@ footer {
     padding: 15px;
     margin: 0px;
 }
+
+/* Hide things */
 
 .hidden {
     visibility: hidden;

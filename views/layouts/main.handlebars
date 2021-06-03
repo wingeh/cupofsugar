@@ -17,7 +17,7 @@
 <header>
     <div id="logo" class="flex-item">
         <a href="/" title="Newsfeed">
-            <h1><i class="bi bi-basket-fill"></i> CUP O' SUGAR</h1>
+            <h1><i class="bi bi-cup"></i> CUP O' SUGAR</h1>
         </a>
     </div>
 
@@ -33,10 +33,10 @@
         <div class="dropdown flex-item hidden" id="profile-button">
             <button class="dropbtn"><i class="bi bi-person-circle"></i> &nbsp;&nbsp; ACCOUNT</button>
             <div class="dropdown-content">
-                <a href="/pantry/"><i class="bi bi-basket"></i> MY PANTRY</a>
-                <a href="/messages/"><i class="bi bi-mailbox"></i> VIEW MESSAGES</a>
-                <a href="create.html"><i class="bi bi-cart-plus"></i> CREATE A POST</a>
-                <a href="#" id="logout"><i class="bi bi-x-circle"></i> SIGN OUT</a>
+                <a href="/pantry"><i class="bi bi-basket"></i> MY PANTRY</a>
+                <a href="/messages"><i class="bi bi-mailbox"></i> VIEW MESSAGES</a>
+                <a href="/create"><i class="bi bi-cart-plus"></i> CREATE A POST</a>
+                <a href="/signout" id="logout"><i class="bi bi-x-circle"></i> SIGN OUT</a>
             </div>
         </div>
 
@@ -47,7 +47,8 @@
     <a href="/login">Sign In</a>
     </div>
     <div class="flex-item">
-    <button class="btn btn-primary btn-lg" href="/login">Register</button>
+    <button class="btn btn-primary btn-lg" href="">Register</button>
+    
     </div>
     {{/if}}
     </div>

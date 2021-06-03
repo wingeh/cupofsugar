@@ -46,11 +46,12 @@ router.get('/pantry', async (req, res) => {
     console.log ("pantry called")
     try {
         const pantryData = await Product.findAll({
+            where: {user_id: req.session.user_id},
             order:[['updatedAt',  'DESC']]
         });
         console.log ("Pantry Data: " + pantryData)
-        const pantry = pantryData.map((product) => product.get({ plain: true }));
-        console.log(product)
+        const pantry = pantryData.map((pantry) => pantry.get({ plain: true }));
+        console.log(pantry)
         res.render('pantry', { pantry });
     } catch (err) {
         res.status(500).json(err);

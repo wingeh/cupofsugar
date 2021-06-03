@@ -1,12 +1,18 @@
 const router = require('express').Router();
-const { Product } = require('../../models');
+const { Product, User } = require('../../models');
 
 
 router.get('/', async (req, res) => {
     try {
         const productData = await Product.findAll({
+            include: { 
+                model: User, 
+                as: 'user',
+            },
             order:[['updatedAt',  'DESC']]
         });
+        const products = productData.map((product) => product.get({ plain: true }));
+        res.render('homepage', products);
         res.status(200).json(productData);
     } catch (err) {
         res.status(400).json(err);
@@ -19,7 +25,7 @@ router.get('/pantry', async (req, res) => {
             const pantryData = await Product.findAll({ where: {user_id: req.session.user_id}});
             const pantryItems = pantryData.map((item) => item.get({ plain: true }));
             console.log(pantryItems)
-            // res.render('pantry', pantryItems); 
+            res.json(pantryItems); 
         } else {
             res.redirect('/');
             return;

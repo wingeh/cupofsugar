@@ -3,6 +3,7 @@ const sendMessage = (event) => {
 
     const message = document.getElementById('message').value;
     const product_id = document.getElementById('product_id').value;
+    
 
     const response = await fetch('api/messages', {
         method: 'POST',

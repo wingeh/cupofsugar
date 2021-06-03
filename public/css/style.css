@@ -66,6 +66,9 @@ header a:hover {
 
 .flex-item {
     display: block;
+    align-self: center;
+    font-size: large;
+    padding: 5px;
 }
 
 .flex {

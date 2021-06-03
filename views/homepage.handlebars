@@ -1,10 +1,10 @@
- <h2>Welcome {{User.name}}</h2>
 
- {{#each Product}}
+
+ {{#each products as |product|}}
     <div class="card">
-        <h4>{{type}}</h4> 
-        <h3>{{quantity}} of {{product}}</h3>
-        <p>Posted By: {{User.name}} - {{timestamps}}</p>
-        <p>{{description}}</p>      
+        <h4>{{product.type}}</h4> 
+        <h3>{{product.quantity}} of {{product.product}}</h3>
+     
+        <p>{{product.description}}</p>      
         </div>
 {{/each}}

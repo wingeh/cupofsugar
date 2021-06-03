@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
         const products = productData.map((product) => product.get({ plain: true }));
         console.log(products)
-        res.render('home', products);
+        res.render('homepage', { products });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -28,4 +28,32 @@ router.get('/login', (req, res) => {
     }
 });
 
+router.get('/messages', async (req, res) => {
+    try {
+        const messageData = await Messages.findAll({
+            order:[['updatedAt',  'DESC']]
+        });
+
+        const messages = messageData.map((messages) => messages.get({ plain: true }));
+        console.log(messages)
+        res.render('messages', { messages });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/pantry', async (req, res) => {
+    console.log ("pantry called")
+    try {
+        const pantryData = await Product.findAll({
+            order:[['updatedAt',  'DESC']]
+        });
+        console.log ("Pantry Data: " + pantryData)
+        const pantry = pantryData.map((product) => product.get({ plain: true }));
+        console.log(product)
+        res.render('pantry', { pantry });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;

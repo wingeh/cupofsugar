@@ -202,7 +202,23 @@
        
 
         <!--Import newsfeed-->
-        <script src="../views/homepage.handlebars" type="test/x-handlebars-template"></script> 
+        <div id="post-container"></div>
+        <script id="postTemplate" type="text/x-handlebars-template">
+        
+          <h2>Welcome {{User.name}}</h2>
+
+{{#each product as |product| }}
+   <div class="card">
+       <h4>{{product.type}}</h4> 
+       <h3>{{quantity}} of {{product}}</h3>
+       <p>Posted By: {{User.name}} - {{timestamps}}</p>
+       <p>{{description}}</p>      
+       </div>
+{{/each}}
+          
+        </script>
+      </div>
+       
 
 </main>
 
@@ -211,6 +227,9 @@
 <p>Copyright &copy; 2021 Cup O' Sugar LLC.</p>
 </footer>
 <!-- Start Scripts-->
+<script src="js/login.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

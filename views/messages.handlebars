@@ -1,8 +1,8 @@
-   {{#each Message}}
+   {{#each messages as |messages|}}
    <div class="card">
-    <h5>{{timestamps}}</h5>
-    <h3>MESSAGE FROM { model: User, as: 'user' }</h3>
-    <p>{{messages}}</p>
+    <h5>{{messages.created_at}}</h5>
+    <h3>MESSAGE FROM USER</h3>
+    <p>{{messages.messages}}</p>
     <button class="btn btn-primary"><i class="bi bi-envelope"></i> Reply</button>
     </div>
     {{/each}}

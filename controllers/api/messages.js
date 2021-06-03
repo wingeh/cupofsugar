@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
             const messages = messageData.map((message) => message.get({ plain: true }));
             
             
-            for (let i = 0; i < messages.length; i++) {
-                return cryptr.decrypt(messages[i].messages)
-            }
+            // for (let i = 0; i < messages.length; i++) {
+            //     return cryptr.decrypt(messages[i].messages)
+            // }
             console.log(messages)
-            res.status(200).json(messages);
+            res.status(200).json(cryptr.decrypt(messages[0].messages));
             // res.render('messages', messages);
         } else {
             res.redirect('/');

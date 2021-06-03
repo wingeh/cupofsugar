@@ -1,6 +1,13 @@
 
-
  {{#each products as |product|}}
+<<<<<<< HEAD
+    <div class="card">
+        <h4>{{product.type}}</h4> 
+        <h3>{{product.quantity}} of {{product.product}}</h3> 
+        <p>{{product.description}}</p> 
+        <p value={{product.id}} id="product_id">{{product.user.name}}</p>
+        <input type="button" value="Send Message" id="renderMessageForm">     
+=======
     <div class="card-wrapper">
         <div class="card-topper {{product.type}}">
             <h4>{{product.type}}</h4>
@@ -9,5 +16,6 @@
             <h3>{{product.quantity}} of {{product.product}}</h3>
             <p>{{product.description}}</p>      
         </div>
+>>>>>>> c970a0ea4483c9d8557f96d72d4078cffeb215e7
     </div>
 {{/each}}

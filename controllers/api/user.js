@@ -53,20 +53,13 @@ router.post('/logout', async (req, res) => {
     }
 });
 
-router.put('/', async (req, res) => {
-    try {
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.delete('/', async (req, res) => {
-    try {
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
+router.get('/register', async (req, res) => {
+  try {
+    console.log('ejhtjkwrgkjsrlkjg harhkd')
+    res.render('register')
+  } catch (err) {
+    res.status(400).json(err);
+  }
 })
 
 

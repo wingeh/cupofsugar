@@ -39,7 +39,7 @@ router.get('/messages', async (req, res) => {
 
         const messages = messageData.map((messages) => messages.get({ plain: true }));
         console.log(messages)
-        res.render('messages', { messages });
+        res.render('messages', { messages, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }

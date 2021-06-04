@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         });
         const products = productData.map((product) => product.get({ plain: true }));
         const name = products[0].user.name
-        res.render('homepage', { products, name });
+        res.render('homepage', { products, name, logged_in:req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -60,4 +60,12 @@ router.get('/pantry', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/register', async (req, res) => {
+    try{
+        res.render('register')
+    } catch (err) {
+
+    }
+})
 module.exports = router;

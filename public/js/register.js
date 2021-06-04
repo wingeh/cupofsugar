@@ -1,37 +1,37 @@
-const registerFormHandler = async (event) => {
-    event.preventDefault();
-
-    const email = document.getElementById('email-register').value;
-    const password = document.getElementById('password-register').value;
-    const emailArr = email.split('@');
-    const name = emailArr[0];
-
-    const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+// const registerFormHandler = async (event) => {
+//     event.preventDefault();
+    
+//     const email = document.getElementById('email-register').value;
+//     const password = document.getElementById('password-register').value;
+//     const emailArr = email.split('@');
+//     const name = emailArr[0];
+//     console.log(email, password, name)
+//     const response = await fetch('/api/users', {
+//         method: 'POST',
+//         body: JSON.stringify({ name, email, password }),
+//         headers: { 'Content-Type': 'application/json' },
+//       });
         
-    if (response.ok) {
-        registerLogin(email, password);
-    } else {
-        alert('Failed to register');
-    };
-};
+//     if (response.ok) {
+//         registerLogin(email, password);
+//     } else {
+//         alert('Failed to register');
+//     };
+// };
 
-const registerLogin =  async (email, password)  => {
-    const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-    });
+// const registerLogin =  async (email, password)  => {
+//     const response = await fetch('/api/users/login', {
+//         method: 'POST',
+//         body: JSON.stringify({ email, password }),
+//         headers: { 'Content-Type': 'application/json' },
+//     });
   
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert('Failed to log in');
-    }
-};
+//     if (response.ok) {
+//         document.location.replace('/');
+//     } else {
+//         alert('Failed to log in');
+//     }
+// };
 
 const renderForm = async () => {
     
@@ -41,9 +41,9 @@ const renderForm = async () => {
     })
 
     if (response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/register');
     }
 
 };
-// document.getElementById('register').addEventListener('submit', registerFormHandler);
+//document.getElementById('register-form').addEventListener('submit', registerFormHandler);
 document.getElementById('register-start').addEventListener('click', renderForm);

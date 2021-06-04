@@ -1,8 +1,10 @@
    {{#each messages as |messages|}}
    <div class="card">
+      <div class="card-body">
     <h5>{{messages.created_at}}</h5>
-    <h3>MESSAGE FROM USER</h3>
+    <p>MESSAGE FROM USER</p>
     <p>{{messages.messages}}</p>
     <button class="btn btn-primary"><i class="bi bi-envelope"></i> Reply</button>
+    </div>
     </div>
     {{/each}}

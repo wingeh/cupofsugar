@@ -22,9 +22,19 @@ router.get('/', async (req, res) => {
 router.get('/pantry', async (req, res) => {
     try {
         if (req.session.logged_in) {
-            const pantryData = await Product.findAll({ where: {user_id: req.session.user_id}});
+            const pantryData = await Product.findAll({ 
+                where: {
+                    user_id: req.session.user_id
+                },
+                include: {
+                    model: User,
+                    as: 'user'
+                }
+            });
             const pantryItems = pantryData.map((item) => item.get({ plain: true }));
+            const name = pantryItems[0].user.name
             console.log(pantryItems)
+            res.render('pantry', { pantryItems, name,  logged_in:req.session.logged_in})
             res.json(pantryItems); 
         } else {
             res.redirect('/');

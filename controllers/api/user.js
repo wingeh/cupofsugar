@@ -6,7 +6,8 @@ router.post('/', async (req, res) => {
   try {
     console.log(req.body)
     const registerData = await User.create(req.body);
-    
+    req.session.user_id = registerData.id;
+    req.session.logged_in = true; 
     res.status(200).json(registerData);
   } catch (err) {
     res.status(400).json(err);
@@ -53,14 +54,23 @@ router.post('/logout', async (req, res) => {
     }
 });
 
+router.get('/loginform', async (req, res) => {
+  try {
+    
+    res.render('login')
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.get('/register', async (req, res) => {
   try {
-    console.log('ejhtjkwrgkjsrlkjg harhkd')
+    
     res.render('register')
   } catch (err) {
     res.status(400).json(err);
   }
-})
+});
 
 
 

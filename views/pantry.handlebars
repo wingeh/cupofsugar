@@ -2,12 +2,16 @@
     
     <a href="/" title="Return to Newsfeed"> &#60; Return to Newsfeed</a>
  
- {{#each Product}}
-    <div class="card">
-        <h4>{{type}}</h4> 
-        <h3>{{quantity}} of {{product}}</h3>
-        <p>Posted On: {{timestamps}}</p>
-        <p>{{description}}</p>
-        <button type="button" class="btn btn-danger" id="delete-post"><i class="bi bi-eraser"></i> DELETE</button> 
+ {{#each pantry as |pantry|}}
+        <div class="card">
+            <div class="card-topper {{pantry.type}}">
+                <h4>{{pantry.type}}</h4>
+            </div>
+            <div class="card-body">
+                <h3>{{pantry.quantity}} of {{pantry.product}}</h3>
+                <p>{{pantry.description}}</p>     
+                <button type="button" class="btn btn-danger" id="delete-post"><i class="bi bi-eraser"></i> DELETE</button>
+            </div>
         </div>
+    
 {{/each}}

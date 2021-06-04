@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Product, User } = require('../../models');
 
 
@@ -61,11 +62,13 @@ router.get('/:id', async (req, res) => {
         if (req.session.logged_in) {
             const productData = await Product.findByPk(req.params.id)
             const products = productData.get({ plain: true });
-            res.status(200).json(products);
+            console.log(products)
+            res.render('messages', {products, logged_in:req.session.logged_in} )
+            // res.status(200).json(products);
         } 
-        // else {
-        //     res.render('home');
-        // }
+        else {
+            res.render('home');
+        }
     } catch (err) {
         res.status(400).json(err);
     }

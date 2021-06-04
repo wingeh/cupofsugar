@@ -8,10 +8,13 @@
             </div>
             <div class="card-body">
                 <h3>{{product.quantity}} of {{product.product}}</h3>
+                <input value={{product.id}} id="product_id"></input>
                 <p>{{product.description}}</p>     
-                <p value={{product.id}} id="product_id">{{product.user.name}}</p>
-                <input type="button" value="Send Message" id="renderMessageForm">
+                <p>{{product.user.name}}</p>
+                <input type="button" value="Send Message" id='renderMessageForm'>
             </div>
         </div>
     
 {{/each}}
+
+<script src="./js/message.js"></script>

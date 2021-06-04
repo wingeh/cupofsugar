@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Messages } = require('../../models');
 require('dotenv').config();
 const Cryptr = require('cryptr');
+const { update } = require('../../models/user');
 const cryptr = new Cryptr(process.env.Cryptr);
 
 router.get('/', async (req, res) => {
@@ -11,15 +12,23 @@ router.get('/', async (req, res) => {
                 where: {user_id: req.session.user_id},
                 order: [['updatedAt',  'DESC']]
             });
-       
+            
             const messages = messageData.map((message) => message.get({ plain: true }));
+           
+            const decrypt = messages.map((mess) => {
+                const obj = {};
+                obj.id = mess.id;
+                obj.messages = cryptr.decrypt(mess.messages);
+                obj.user_id = mess.user_id;
+                obj.product_id = mess.product_id;
+                obj.created_at = mess.createdAt;
+                obj.updated_at = mess.updatedAt;
+                console.log(obj)
+                return obj;
+            }) 
             
-            
-            // for (let i = 0; i < messages.length; i++) {
-            //     return cryptr.decrypt(messages[i].messages)
-            // }
-            console.log(messages)
-            res.status(200).json(cryptr.decrypt(messages[0].messages));
+            console.log(decrypt)
+            res.status(200).json(decrypt);
             // res.render('messages', messages);
         } else {
             res.redirect('/');

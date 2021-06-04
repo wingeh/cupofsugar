@@ -76,5 +76,14 @@ router.get('/create', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+
+router.get('/messageform', async (req, res) => {
+    try{
+        res.render('messageform', {logged_in: req.session.logged_in})
+    } catch (err) {
+        res.status(500).json(err);
+    }
 })
 module.exports = router;

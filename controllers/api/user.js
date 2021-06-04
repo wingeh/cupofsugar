@@ -54,6 +54,15 @@ router.post('/logout', async (req, res) => {
     }
 });
 
+router.get('/loginform', async (req, res) => {
+  try {
+    
+    res.render('login')
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.get('/register', async (req, res) => {
   try {
     
@@ -61,7 +70,7 @@ router.get('/register', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-})
+});
 
 
 

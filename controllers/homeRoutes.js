@@ -52,7 +52,7 @@ router.get('/pantry', async (req, res) => {
             where: {user_id: req.session.user_id},
             order:[['updatedAt',  'DESC']]
         });
-        console.log ("Pantry Data: " + pantryData)
+        
         const pantry = pantryData.map((pantry) => pantry.get({ plain: true }));
         console.log(pantry)
         res.render('pantry', { pantry, logged_in: req.session.logged_in });

@@ -32,7 +32,7 @@
             <div class="dropdown-content">
                 <a href="/pantry"><i class="bi bi-basket"></i> MY PANTRY</a>
                 <a href="/messages"><i class="bi bi-mailbox"></i> VIEW MESSAGES</a>
-                <a href="/create"><i class="bi bi-cart-plus"></i> CREATE A POST</a>
+                <a href="" id="get-post-form"><i class="bi bi-cart-plus"></i> CREATE A POST</a>
                 <a href="" id="logout"><i class="bi bi-x-circle"></i> SIGN OUT</a>
             </div>
         </div>
@@ -62,10 +62,13 @@
 <p>Copyright &copy; 2021 Cup O' Sugar LLC.</p>
 </footer>
 <!-- Start Scripts-->
-<script src="./js/register.js"></script>
-<script src="./js/register-login.js"></script>
+{{#if logged_in}}
+<script src="./js/product.js"></script>
 <script src="./js/logout.js"></script>
-<script src="./js/login.js"></script>
+{{else}}
+<script src="./js/register.js"></script>
+{{!-- <script src="./js/login.js"></script> --}}
+{{/if}}
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <scrip src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></scrip>
 <scrip src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></scrip>

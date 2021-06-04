@@ -26,9 +26,6 @@
     <!-- User Profile displays when a session is active -->
     {{#if logged_in}}
 
-        <!-- Load logout.js -->
-       
-
         <!-- Profile / Sign Out displays when a session is active -->
         <div class="dropdown flex-item" id="profile-button">
             <button class="dropbtn"><i class="bi bi-person-circle"></i> &nbsp;&nbsp; ACCOUNT</button>
@@ -53,8 +50,12 @@
     </div>
 
 </header>
+
 <main>
+
+<!-- Handlebars is rendered here -->    
 {{{body}}}
+
 </main>
 
 <footer>

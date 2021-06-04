@@ -45,5 +45,5 @@ const renderForm = async () => {
     }
 
 };
-// document.getElementById('register').addEventListener('submit', registerFormHandler);
+document.getElementById('register').addEventListener('click', registerFormHandler);
 document.getElementById('register-start').addEventListener('click', renderForm);

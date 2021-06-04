@@ -46,7 +46,7 @@ router.get('/messages', async (req, res) => {
 });
 
 router.get('/pantry', async (req, res) => {
-    console.log ("pantry called")
+
     try {
         const pantryData = await Product.findAll({
             where: {user_id: req.session.user_id},

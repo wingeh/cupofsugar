@@ -33,4 +33,17 @@ const registerLogin =  async (email, password)  => {
     }
 };
 
-document.getElementById('#register-form').addEventListener('click', registerFormHandler);
+const renderForm = async () => {
+    
+    const response = await fetch('api/users/register', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    })
+
+    if (response.ok) {
+        document.location.replace('/login');
+    }
+
+};
+// document.getElementById('register').addEventListener('submit', registerFormHandler);
+document.getElementById('register-start').addEventListener('click', renderForm);

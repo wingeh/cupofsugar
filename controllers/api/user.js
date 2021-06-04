@@ -29,12 +29,10 @@ router.post('/login', async (req, res) => {
           return;
       };
       
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-            
-        res.json({ user: userData, message: 'You are now logged in!' });
-      });
+      req.session.user_id = userData.id;
+      req.session.logged_in = true; 
+      res.json({ user: userData, message: 'You are now logged in!' });
+ 
 
     } catch (err) {
         res.status(400).json(err);
@@ -55,20 +53,13 @@ router.post('/logout', async (req, res) => {
     }
 });
 
-router.put('/', async (req, res) => {
-    try {
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.delete('/', async (req, res) => {
-    try {
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
+router.get('/register', async (req, res) => {
+  try {
+    console.log('ejhtjkwrgkjsrlkjg harhkd')
+    res.render('register')
+  } catch (err) {
+    res.status(400).json(err);
+  }
 })
 
 

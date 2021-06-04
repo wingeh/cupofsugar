@@ -1,10 +1,14 @@
 
-
  {{#each products as |product|}}
-    <div class="card">
-        <h4>{{product.type}}</h4> 
-        <h3>{{product.quantity}} of {{product.product}}</h3>
-     
-        <p>{{product.description}}</p>      
+    <div class="card-wrapper">
+        <div class="card-topper {{product.type}}">
+            <h4>{{product.type}}</h4>
+        </div> 
+        <div class="card">
+            <h3>{{product.quantity}} of {{product.product}}</h3>
+            <p>{{product.description}}</p>     
+            <p value={{product.id}} id="product_id">{{product.user.name}}</p>
+        <input type="button" value="Send Message" id="renderMessageForm">   
         </div>
+    </div>
 {{/each}}

@@ -24,5 +24,14 @@ const viewMessages = () => {
     })
 }
 
+const renderMessageForm = () => {
+    const product_id = document.getElementById('product_id').value;
+    const response = await fetch (`/api/products/message/${product_id}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+}
+
+document.getElementById('renderMessageForm').addEventListener('click', renderMessageForm)
 document.getElementById('view-message').addEventListener('click', viewMessages);
 document.getElementById('send-message').addEventListener('submit', sendMessage);

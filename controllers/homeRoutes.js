@@ -68,4 +68,13 @@ router.get('/register', async (req, res) => {
 
     }
 })
+
+
+router.get('/create', async (req, res) => {
+    try{
+        res.render('create')
+    } catch (err) {
+
+    }
+})
 module.exports = router;

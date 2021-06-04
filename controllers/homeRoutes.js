@@ -34,6 +34,7 @@ router.get('/login', (req, res) => {
 router.get('/messages', async (req, res) => {
     try {
         const messageData = await Messages.findAll({
+            where: {user_id: req.session.user_id}, 
             order:[['updatedAt',  'DESC']]
         });
 

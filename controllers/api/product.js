@@ -60,10 +60,10 @@ router.get('/create', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         if (req.session.logged_in) {
-            const productData = await Product.findByPk(req.params.id)
+            const productData = await Product.findByPk(req.params.id, {include: {model: User, as: 'user'}})
             const products = productData.get({ plain: true });
             console.log(products)
-            res.render('messages', {products, logged_in:req.session.logged_in} )
+            res.render('messageform', { products, logged_in:req.session.logged_in} )
             // res.status(200).json(products);
         } 
         else {

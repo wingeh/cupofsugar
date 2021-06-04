@@ -29,7 +29,7 @@
 //     if (response.ok) {
 //         document.location.replace('/');
 //     } else {
-//         alert('Failed to log in');
+//         alert('Failed to register!');
 //     }
 // };
 
@@ -45,5 +45,5 @@ const renderForm = async () => {
     }
 
 };
-//document.getElementById('register-form').addEventListener('submit', registerFormHandler);
+// document.getElementById('register-form').addEventListener('submit', registerFormHandler);
 document.getElementById('register-start').addEventListener('click', renderForm);

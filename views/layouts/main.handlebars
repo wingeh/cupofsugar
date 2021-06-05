@@ -19,7 +19,7 @@
 <body>
 <!-- Header Section -->
 <header>
-    <div id="logo" class="flex-item">
+    <div id="logo" class="flex-item logo">
         <a href="/" title="Newsfeed">
             <h1><i class="bi bi-cup"></i> CUP O' SUGAR</h1>
         </a>
@@ -29,13 +29,20 @@
     <!-- User Profile displays when a session is active -->
     {{#if logged_in}}
         <!-- Profile / Sign Out displays when a session is active -->
-        <div class="dropdown flex-item" id="profile-button">
-            <button class="dropbtn"><i class="bi bi-person-circle"></i></button>
+        
+        
+        <button class="navbtn" id="get-post-form"><i class="bi bi-cart-plus"></i></button>
+        
+        
+
+        <a href="/messages"><button class="navbtn"><i class="bi bi-mailbox"></i></button></a>
+    
+
+        <div class="dropdown">
+            <button class="navbtn" id="pantry"><i class="bi bi-person-circle"></i></button>
             <div class="dropdown-content">
-                <a href="" id="pantry"><i class="bi bi-basket"></i> MY PANTRY</a>
-                <a href="/messages"><i class="bi bi-mailbox"></i> VIEW MESSAGES</a>
-                <a href="" id="get-post-form"><i class="bi bi-cart-plus"></i> MAKE AN OFFER</a>
-                <a href="" id="logout"><i class="bi bi-x-circle"></i> SIGN OUT</a>
+                <a href="/pantry"><i class="bi bi-basket"></i> My Pantry</a>
+                <a href="" id="logout"><i class="bi bi-x-circle"></i> Sign Out</a>
             </div>
         </div>
     <!-- Sign In / Register displays when a session is not active -->

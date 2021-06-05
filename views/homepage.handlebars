@@ -1,23 +1,21 @@
-
+<div class="market-container">
  {{#each products as |product|}}
-    
-
-        <div class="card">
-            <div class="card-topper {{product.type}}">
-                <h4>{{product.type}}</h4>
-            </div>
-            <div class="card-body">
+    <div class="market-card">
+        <div class="card-header {{product.type}}">
                 <h3>{{product.quantity}} of {{product.product}}</h3>
-                <input value={{product.id}} class="product_id hidden"></input>
-                <p><strong>Offered by:</strong> {{product.user.name}}</p>
-                <p>{{product.description}}</p>     
-                
-                <p class="timestamp">Posted: {{product.createdAt}}</p>   
-                <hr>             
-                <input type="button" value="Send Message" class='renderMessageForm btn btn-primary'>
-            </div>
+                <sup><strong>Category:</strong> <em>{{product.type}}</em></sup>
         </div>
-    
+        <div class="card-body">
+            <input value={{product.id}} class="product_id hidden"></input>
+            <p><strong>{{product.user.name}} says ...</strong> {{product.description}}</p>
+        </div>
+            
+        <div class="card-footer">             
+            <input type="button" value="Send Message" class='renderMessageForm btn btn-primary'>
+            <p class="timestamp">Posted: {{product.createdAt}}</p>
+        </div>
+        </class>
+    </div>      
 {{/each}}
-
+</div>
 <script src="./js/message.js"></script>

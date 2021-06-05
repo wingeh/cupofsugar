@@ -2,10 +2,51 @@
    {{#each messages as |messages|}}
    <div class="card">
       <div class="card-body">
-         <p>Message From: {{user.name}}</p>
+         <p><strong>Message From:</strong>{{messages.username}}</p>
          <p>{{messages.messages}}</p>
-         <p class="timestamp">Sent: {{messages.created_at}}</p>
-         <button class="btn btn-primary"><i class="bi bi-envelope"></i> Reply</button>
+         <p class="timestamp">Sent: {{messages.createdAt}}</p>
+         <button class="btn btn-primary" onclick="onReply('{{messages.id}}')"><i class="bi bi-envelope"></i> Reply</button>
+
+         <div id="reply-{{messages.id}}" style="display: none;">
+            <h4>Message</h4>
+            <input type="text" id="reply-msg-{{messages.id}}" />
+            <input type="button" onclick="onSumbitReply('{{messages.id}}')" class="btn btn-primary" value="Send Reply" />
+         </div>
       </div>
     </div>
     {{/each}}
+
+    <script>
+       function onReply(message_id)
+       {
+          var div_id = "reply-" + message_id;
+          document.getElementById(div_id).style.display = 'block';
+       }
+
+       function onSumbitReply(message_id)
+       {
+          var input_id = "reply-msg-" + message_id;
+          var reply_msg = document.getElementById(input_id).value;
+          console.log("Reply Message", reply_msg);
+
+            var params = {       
+               "id": message_id,
+               "reply_msg": reply_msg       
+            };
+
+            fetch("/api/messages/reply", {
+               method: 'POST',
+               headers: {
+                     'Content-Type': 'application/json'
+               },
+               credentials: 'include',
+               body: JSON.stringify(params),
+
+            }).then(function(response) {
+               return response.json();
+            }).then(function(data) {
+               console.log("Response", data);
+               //window.location.href = "/messages";
+            });          
+       }
+    </script>

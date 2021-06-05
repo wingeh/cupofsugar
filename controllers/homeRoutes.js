@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Product, Messages } = require('../models');
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr(process.env.Cryptr);
 
 router.get('/', async (req, res) => {
     try {
@@ -38,8 +40,20 @@ router.get('/messages', async (req, res) => {
             order:[['updatedAt',  'DESC']]
         });
 
+        const userData = await User.findOne({ where: {id: req.session.user_id } });
+        console.log("userData", userData.name);
+
         const messages = messageData.map((messages) => messages.get({ plain: true }));
-        console.log(messages)
+        messages.map(item => {
+            try {
+                item.messages = cryptr.decrypt(item.messages);   
+                item.username = userData.name;                
+                return item;
+            } catch(ex) {
+                console.error(ex);
+            }
+        });
+        
         res.render('messages', { messages, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);

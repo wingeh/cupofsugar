@@ -6,6 +6,7 @@ const hbs = exhbs.create({});
 const path = require('path');
 
 const sequelize = require('./config/connection');
+const { url } = require('inspector');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -25,6 +26,12 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//post request 
+
+app.post('/api'), (request,response)=> { 
+  console.log(request);
+}
 app.use(session(sess));
 
 app.use(express.json());

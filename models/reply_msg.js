@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Messages extends Model {}
+class ReplyMsg extends Model {}
 
-Messages.init(
+ReplyMsg.init(
   {
     id: {
       type: DataTypes.INTEGER, 
@@ -12,7 +12,7 @@ Messages.init(
       primaryKey: true,
       autoIncrement: true,
     },
-   messages: {
+   ReplyMsg: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,7 +22,14 @@ Messages.init(
         model: 'user',
         id: 'id'
       }
-    }
+    },
+    id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'product',
+          id: 'id'
+        }
+      }
   },
   {
     sequelize,

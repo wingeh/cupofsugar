@@ -26,8 +26,6 @@ router.get('/', async (req, res) => {
                 console.log(obj)
                 return obj;
             }) 
-            
-            console.log(decrypt)
             res.status(200).json(decrypt);
             // res.render('messages', messages);
         } else {

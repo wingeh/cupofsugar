@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Product, Messages } = require('../models');
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr(process.env.Cryptr);
 
 router.get('/', async (req, res) => {
     try {
@@ -39,6 +41,16 @@ router.get('/messages', async (req, res) => {
         });
 
         const messages = messageData.map((messages) => messages.get({ plain: true }));
+        messages.map(item => {
+            try {
+                item.messages = cryptr.decrypt(item.messages);   
+                console.log("Decrypted Message", item.messages);
+                return item;
+            } catch(ex) {
+                console.error(ex);
+            }
+        });
+        
         console.log(messages)
         res.render('messages', { messages, logged_in: req.session.logged_in });
     } catch (err) {

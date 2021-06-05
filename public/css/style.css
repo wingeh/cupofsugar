@@ -4,6 +4,11 @@
     --white: #fff;
 }
 
+.bg-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
 html {
     
 }
@@ -91,45 +96,6 @@ main {
   padding: 15px;
   justify-content: center; 
   align-content: space-around;
- 
-}
-
-#offered {
-    background-color: green;
-    color: var(--white);
-    width:50%;
-    text-align: center;
-}
-
-#requested {
-    background-color: red;
-    color: var(--white);
-    width:50%;
-    text-align: center;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltiptext {
-  visibility: visible;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
 }
 
 /* Card Styling */

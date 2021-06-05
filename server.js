@@ -6,6 +6,7 @@ const hbs = exhbs.create({});
 const path = require('path');
 
 const sequelize = require('./config/connection');
+const { url } = require('inspector');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();

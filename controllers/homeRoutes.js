@@ -40,18 +40,20 @@ router.get('/messages', async (req, res) => {
             order:[['updatedAt',  'DESC']]
         });
 
+        const userData = await User.findOne({ where: {id: req.session.user_id } });
+        console.log("userData", userData.name);
+
         const messages = messageData.map((messages) => messages.get({ plain: true }));
         messages.map(item => {
             try {
                 item.messages = cryptr.decrypt(item.messages);   
-                console.log("Decrypted Message", item.messages);
+                item.username = userData.name;                
                 return item;
             } catch(ex) {
                 console.error(ex);
             }
         });
         
-        console.log(messages)
         res.render('messages', { messages, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Product, Messages } = require('../models');
 const Cryptr = require('cryptr');
-const cryptr = new Cryptr(process.env.Cryptr);
+const cryptr = new Cryptr("string");
 
 router.get('/', async (req, res) => {
     try {

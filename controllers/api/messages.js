@@ -5,7 +5,7 @@ const Cryptr = require('cryptr');
 // const { update } = require('../../models/user');
 // const { rootCertificates } = require('tls');
 // const { timeLog, timeStamp } = require('console');
-const cryptr = new Cryptr('myTotalySecretKey');
+const cryptr = new Cryptr("string");
 
 
 

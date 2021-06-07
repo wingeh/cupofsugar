@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: process.env.SECRET,
+  secret: "super super secret",
   cookie: {},
   resave: false,
   saveUninitialized: false,

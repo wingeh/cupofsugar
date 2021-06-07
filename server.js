@@ -4,7 +4,7 @@ const routes = require('./controllers');
 const exhbs = require('express-handlebars');
 const hbs = exhbs.create({});
 const path = require('path');
-require('dotenv').config()
+const dotenv = require('dotenv').config()
 const sequelize = require('./config/connection');
 const { url } = require('inspector');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -33,7 +33,7 @@ app.post('/api'), (request,response)=> {
   console.log(request);
 }
 app.use(session({
-  secret: 'process.env.SECRET',
+  secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: false,

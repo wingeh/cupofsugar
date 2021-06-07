@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
             // res.status(200).json(products);
         } 
         else {
-            res.render('home');
+            res.render('homepage');
         }
     } catch (err) {
         res.status(400).json(err);

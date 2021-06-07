@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User, Product, Messages } = require('../models');
 const Cryptr = require('cryptr');
-const cryptr = new Cryptr("string");
+const cryptr = new Cryptr(process.env.CRYPTR);
+const dotenv = require('dotenv').config()
 
 router.get('/', async (req, res) => {
     try {

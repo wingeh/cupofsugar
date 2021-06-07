@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { Messages, User } = require('../../models');
 require('dotenv').config();
 const Cryptr = require('cryptr');
-const { update } = require('../../models/user');
-const { rootCertificates } = require('tls');
-const { timeLog, timeStamp } = require('console');
-const cryptr = new Cryptr('non0lengthstring');
+// const { update } = require('../../models/user');
+// const { rootCertificates } = require('tls');
+// const { timeLog, timeStamp } = require('console');
+const cryptr = new Cryptr('myTotalySecretKey');
 
 
 

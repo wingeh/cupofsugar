@@ -33,7 +33,7 @@ app.post('/api'), (request,response)=> {
   console.log(request);
 }
 app.use(session({
-  secret: "process.env.SECRET",
+  secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: false,

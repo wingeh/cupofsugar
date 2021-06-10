@@ -1,5 +1,7 @@
 # Cup of Sugar
 
+https://github.com/RyeBowTie/cupofsugar
+
 # Description 
 
 Concerned about the amount of food that is wasted everyday, we have created Cup of Sugar as a means to help. This app lets people post products that they would like to get rid of. Perhaps they bought too much of something that they don't want to go bad, or maye they grew something and would like to share their harvest. Cup of sugar would be the app for them. Simple to use, it provides users with a list of products that others have posted, they can then message them to help facilitate the exchange.   

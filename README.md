@@ -1,6 +1,6 @@
 # Cup of Sugar
 
-https://github.com/RyeBowTie/cupofsugar
+https://github.com/wingeh/cupofsugar
 
 # Description 
 
